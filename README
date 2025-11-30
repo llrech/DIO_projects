@@ -1,0 +1,26 @@
+PROJETO - Ataque de Brute Force de Senhas com Medusa e Kali Linux
+
+1. Início/Instalação
+
+- Instalação de uma máquina virtual Kali Linux 2025.3 disponível em kali.org no Oracle VM VirtualBox
+- Obtenção e instalação do Metasploitable 2.
+
+2. Configurando a conexão de rede entre asa máquinas virtuais.
+
+3. Na VM do Metasploitable criado um snapshot
+
+4. Obtido o IP da Metasploitable.
+
+5. Na máquina virtual do Kali, realizado ping -c com o IP da máquina do Metasploitable.
+
+6. Realizada pesquisa usando o nmap -sV -p para rastrear as portas utilizadas. Identificada que a porta FTP está aberta.
+
+7. Ao tentar acessar remotamente o FTP ele solicitou login e senha de acesso.
+
+8. Criada uma lista de possíveis nome de usuário e senha mais comuns.
+
+9. Utilizado o comando medusa -h 192.168.56.102 -U usuário.txt -p senha.txt -M ftp -t 6 para fazer o teste entre as combinações de login e senha dos arquivos criados.
+
+10. Foi localizado um login e senha compatíveis e obtido acesso remoto aos sistema do Metasploitable 2.
+
+Um detalhe interessante é que toda a pesquisa utilizando o ping, nmap e medusa não requereu qualquer procedimento ou acesso privilegiado. 
